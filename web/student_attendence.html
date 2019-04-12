@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:700" rel="stylesheet">
+        <link href="login.css" rel="stylesheet">
+    </head>
+    <body class="bg_img">
+         <div>
+             <div class="cont1">
+                 <img src="gallery/logo.png" style="width: 60%; height: 35%;">
+             </div>
+             <div class="cont1">
+           <table>
+               <tr>
+                   <th><input type="submit" value="HOME" class="btn_lg"> </th>
+                   <th><input type="submit" value="STUDENT PROFILE" class="btn_lg"> </th>
+                   <th><input type="submit" value="VIEW ATTEDENCE" class="btn_lg"></th>
+                   <th><select name="class"  class="btn_lg">
+                              <option selected value="VIEW CLASS TIMETABLE">VIEW CLASS TIMETABLE</option>
+                              <option value="VIEW EXAM TIMETABLE">VIEW EXAM TIMETABLE</option>
+                  </select></th>
+                   </tr>
+                   <tr>
+                    <th><select name="exam"  class="btn_lg">
+                               <option selected value="INTERNALS MARKS">VIEW INTERNALS MARKS</option>
+                               <option value="SEMSETER MARKS">VIEW SEMSETER MARKS</option>
+                   </select></th>
+                   <th><a href="logout"><input type="submit" value="LOGOUT" class="btn_lg"> </a> </th>
+               </tr>
+           </table>
+             </div>
+         </div>
+         <div class="cont2">
+           <div>
+               <form method="get" action="attend">
+               <table class="att_cont">
+                    <tr>
+                        <td ><center><h4>Semester</h4></center>
+                            <center><select name="sem" class="drop" id="sem">
+                            <option selected value="-null-">Null</option>
+                            <option id="1">1</option>
+                            <option id="2">2</option>
+                            <option id="3">3</option>
+                            <option id="4">4</option>
+                            <option id="5">5</option>
+                            <option id="6">6</option>
+                            <option id="7">7</option>
+                            <option id="8">8</option>
+                            <option id="9">9</option>
+                            <option id="10">10</option>
+                            </select></center>
+                        
+               </td>
+                        <td >
+                            <center><h4>Course</h4>
+                            <select name="subject" class="drop" id="sub">
+                            <option selected value="-null-">Null</option>
+                            <option id="sub1">1</option>
+                            <option id="sub2">2</option>
+                            <option id="sub3">3</option>
+                            <option id="sub4">4</option>
+                            <option id="sub5">5</option>
+                            <option id="sub6">6</option>
+                            <option id="sub7">7</option>
+                            <option id="sub8">8</option>
+                            <option id="sub9">9</option>
+                            <option id="sub10">10</option>
+                            </select></center>
+                        </td>
+                        <td ><center><h4>Type</h4>
+                            <select name="semtype" class="drop">
+                            <option selected value="regular">Regular</option>
+                            <option value="part">Part time</option>
+                            </select></center>
+                        </td>
+                 </tr>
+                 <tr>
+                     <td colspan="3">
+                 <center>
+                     <input type="submit" value="SHOW ATTENDANCE" class="btn_lg">
+                 </center>
+                 </td>
+                 </tr>
+               <tr>
+                 <th>Sl.no.</th>
+                 <th>Course code</th>
+                 <th>Course name</th>
+                 <th>ATTENDENCE</th>
+               </tr>
+             </table>
+               </form>
+           </div>
+         </div>
+    </body>
+</html>
