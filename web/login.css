@@ -1,0 +1,176 @@
+body
+            {
+                font-family: 'Quicksand', sans-serif;
+            }
+            
+            input:focus {
+                            outline:none !important;
+                        }
+                        
+            .btn_lg
+            {
+                box-shadow: none;
+                border-radius: 8px;
+                width:9vw;
+                height: 5vh;
+                border:1px solid white;
+                background-color:#2874A6  ;
+                color:black;
+                font-family: 'Montserrat', sans-serif;
+                
+            }
+            
+            .btn_lg:hover
+            {
+                background-color: #5D6D7E ;
+                color:white;
+            }
+.bg_img{
+background-image: url(gallery/college_img1.jpg);
+background-repeat:no-repeat;
+ background-size:cover;
+background-attachment: fixed;
+}
+.cont1{
+float: left;width: 45%;height:60%; 
+}
+.log_cont{
+float: left;
+margin-left:10vw;
+width:30vw;
+border:1px solid white;
+background-color: rgba(255, 255, 255,0.3);
+box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
+border-radius: 10px;
+overflow: hidden
+}
+.ip_txt{
+border:none;background-color:transparent;border-bottom: 2px solid #333333;font-size:14pt;
+}
+.cont2{
+    float: left;
+    width: 20%;
+    height: 50%;
+    bottom: 150%;
+}
+
+.dropbtn {
+  
+  
+                box-shadow: none;
+                border-radius: 8px;
+                width:9vw;
+                height: 5vh;
+                border:1px solid white;
+                background-color:#2874A6  ;
+                color:black;
+                font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+   
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 7px 7px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:#2874A6}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+   background-color: #5D6D7E ;
+                color:white;
+}
+
+
+.log_cont1{
+float: right;
+margin-right:20vw;
+width:40vw;
+border:1px solid white;
+background-color: rgba(255, 255, 255,0.6);
+box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
+border-radius: 10px;
+overflow: hidden
+}
+.log_cont2{
+float: right;
+margin-right:20vw;
+height:250vw; 
+width: 40vw;
+border:1px solid white;
+background-color: rgba(255, 255, 255,0.6);
+box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
+border-radius: 10px;
+overflow: hidden
+}
+
+.ip_txt1{
+border:none;background-color:transparent;border-bottom: 2px solid #333333;font-size:10pt; width:80pt;
+}
+
+.input {
+border: 2px solid #A0A49E;
+border-radius: 32px;
+}
+
+.input1 {
+border: 2px solid #A0A49E;
+border-radius: 32px;
+width: 200px;
+}
+
+
+table.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 90%;
+
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
