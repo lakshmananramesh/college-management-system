@@ -36,67 +36,182 @@ public class admission_student extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet admission_student</title>");            
+            out.println("<title>Servlet admission_student</title>");
+            
             out.println("</head>");
             out.println("<body>");
+            //out.println("hwllo");
             String name=request.getParameter("txt1");
-            String course=request.getParameter("course");
-            String j_year=request.getParameter("yy");
-            String r="1";
-            String no=request.getParameter("txt3");
-            //out.println(name+""+course+""+j_year);
-             int d=Integer.parseInt(no);;
-            try
+            
+            String admission_no=request.getParameter("txt2");
+            String a_d=request.getParameter("dd");
+            String a_m=request.getParameter("mm");
+            String a_y=request.getParameter("yy");
+            String admission_date=a_d+"-"+a_m+"-"+a_y;
+          
+            String b_d=request.getParameter("bdd");
+            String b_m=request.getParameter("bmm");
+            String b_y=request.getParameter("byy");
+            String dob=b_d+"-"+b_m+"-"+b_y;
+            
+            String gender=request.getParameter("txt3");
+            String course=request.getParameter("txt4");
+            
+            String f_name=request.getParameter("txt5");
+            String m_name=request.getParameter("txt6");
+            String f_job=request.getParameter("txt7");
+            String m_job=request.getParameter("txt8");
+            
+            
+            String f_num=request.getParameter("txt9");
+            String m_num=request.getParameter("txt10");
+            String email=request.getParameter("txt11");
+            
+            String religion=request.getParameter("txt12");
+            String address=request.getParameter("txt13");
+            
+            String district=request.getParameter("txt14");
+            String state=request.getParameter("txt15");
+            String nation=request.getParameter("txt16");
+            
+            String g_name=request.getParameter("txt17");
+            
+            String g_address=request.getParameter("txt18");
+            String g_num=request.getParameter("txt19");
+            
+            String latral=request.getParameter("txt20");
+            String college_bus=request.getParameter("txt21");
+            String bus_id=request.getParameter("txt22");
+            String parent_email=request.getParameter("txt35");
+            //out.println(parent_email);
+            String hs_name=request.getParameter("txt23");
+            String hs_year=request.getParameter("txt24");
+            String hs_mark=request.getParameter("txt25");
+            
+            String hss_name=request.getParameter("txt26");
+            String hss_year=request.getParameter("txt27");
+            String hss_mark=request.getParameter("txt28");
+            
+            String ug_name=request.getParameter("txt29");
+            String ug_year=request.getParameter("txt30");
+            String ug_mark=request.getParameter("txt31");
+            
+            
+            String pg_name=request.getParameter("txt32");
+            String pg_year=request.getParameter("txt33");
+            String pg_mark=request.getParameter("txt34");
+            //String r="123";
+            int r=1;
+          //  int b1=Integer.parseInt(bus_id);
+            int h1=Integer.parseInt(hs_year);
+            int h2=Integer.parseInt(hss_year);
+            int h3=Integer.parseInt(ug_year);
+            int h4=Integer.parseInt(pg_year);
+            
+            int m1=Integer.parseInt(hs_mark);
+            int m2=Integer.parseInt(hss_mark);
+            int m3=Integer.parseInt(ug_mark);
+            int m4=Integer.parseInt(pg_mark);
+                       //out.println(name+""+course+""+j_year);
+             int d=Integer.parseInt(admission_no);
+             String password="ccms12345";
+             
+          try
                
             {
                  Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
-                 PreparedStatement ps = con.prepareStatement("insert into student values(?,?,?,?,?)");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
+               
+              PreparedStatement ps = con.prepareStatement("insert into student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                 ps.setString(1,name);
-                ps.setString(2,course);
-                ps.setString(3,j_year);
-                ps.setString(4,r);
-                ps.setInt(5, d);
+                ps.setInt(2,d);
+                ps.setString(3,admission_date);
+                ps.setString(4,dob);
+                ps.setString(5,gender);
+                ps.setString(6,course);
+                ps.setString(7,f_name);
+                ps.setString(8,m_name);
+                ps.setString(9,f_job);
+                ps.setString(10,m_job);
+                ps.setString(11,f_num);
+                ps.setString(12,m_num);
+                ps.setString(13,email);
+                ps.setString(14,religion);
+                ps.setString(15,address);
+                ps.setString(16,district);
+                ps.setString(17,state);
+                ps.setString(18,nation);
+                ps.setString(19,g_name);
+                ps.setString(20,g_address);
+                ps.setString(21,g_num);
+                ps.setString(22,latral);
+                ps.setString(23,college_bus);
+                ps.setString(24,bus_id);
+                ps.setString(25,parent_email);
+                ps.setString(26,hs_name);
+                ps.setInt(27,h1);
+                 ps.setInt(28,m1);
+                ps.setString(29,hss_name);
+                ps.setInt(30,h2);
+                 ps.setInt(31,m2);
+                ps.setString(32,ug_name);
+                ps.setInt(33,h3);
+                 ps.setInt(34,m3);
+                 ps.setString(35,pg_name);
+                ps.setInt(36,h4);
+                 ps.setInt(37,m4);
+                 ps.setString(38,password);
+                 ps.setInt(39,r);
+                  ps.setString(40,a_y);
+               
+                
+                
                 ps.executeUpdate();
                 int i=1;
                 String a="",b ="";
                 int h=0;
-                
-                //PreparedStatement p = con.prepareStatement("update student set rollnumber=? where course=? and year=? order by name asc");
-                //p.setString(1,r);
-                //p.setString(2,course);
-                // p.setString(3,j_year);
-                 //p.executeUpdate();
+                String f="";
+              
                  
                   PreparedStatement pa = con.prepareStatement("select * from student where course=? and year=? order by name asc");
                   pa.setString(1,course);
-                  pa.setString(2,j_year);
+                  pa.setString(2,a_y);
                 ResultSet rs = pa.executeQuery();
                 while(rs.next())
                 {
+                     r=0;
+                    f=Integer.toString(r);
                     a=Integer.toString(i);
-                    r=course+j_year+a;
+                    
+                    f=course+a_y+a;
+                    
                    b=rs.getString("name");
                    h=rs.getInt("admission_no");
-                     PreparedStatement p = con.prepareStatement("update student set rollnumber=? where name=? and admission_no=?");
-                      p.setString(1,r);
+                   r=Integer.parseInt(f);
+                     PreparedStatement p = con.prepareStatement("update student set rollno=? where name=? and admission_no=?");
+                     p.setInt(1,r);
                 p.setString(2,b);
                 p.setInt(3,h);
                 p.executeUpdate();
-                 out.print(b+"   "+r+"<br>");
-                   
+                 
+                   //out.println(r);
                     i=i+1;
                    
                  }
                 rs.close();
-               //  out.print(b);
+                 PreparedStatement pf = con.prepareStatement("insert into parent values (?,?,?)");
+                     pf.setInt(1,r);
+                pf.setString(2,parent_email);
+                pf.setString(3,password);
+              pf.executeUpdate();
                  con.close();
+                 response.sendRedirect("admission_home.html");
             }
             catch(Exception e)
             {
                 out.println(e);
             }
-            out.println("</body>");
+            out.println("</body>"); 
             out.println("</html>");
         }
     }
