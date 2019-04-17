@@ -46,7 +46,7 @@
                     <tr>
                         <td>
                             <form>
-                    <center><select name="course" class="btn_lg">
+                    <center>COURSE<select name="course" class="btn_lg">
                             <option value ="Null">-Select-</option>
                             <option value="IntMCA">Integrated MCA</option>
                             <option value="BCom">BCom</option>
@@ -55,7 +55,8 @@
                             <option value="BFA">BFA</option>
                             <option value="MFA">MFA</option>
                             <option value="MCA">MCA</option>
-                        </select><select name="semester" class="btn_lg">
+                        </select><br>
+                        SEMESTER<select name="semester" class="btn_lg">
                             <option value ="Null">-Select-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

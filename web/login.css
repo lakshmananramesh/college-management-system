@@ -53,6 +53,13 @@ border:none;background-color:transparent;border-bottom: 2px solid #333333;font-s
     height: 50%;
     bottom: 150%;
 }
+.cont3{
+    position: fixed;
+  top: 40%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -90px;
+}
 
 .dropbtn {
   
@@ -103,20 +110,9 @@ border:none;background-color:transparent;border-bottom: 2px solid #333333;font-s
 
 
 .log_cont1{
-float: right;
-margin-right:20vw;
+float: left;
+margin-left:40vw;
 width:40vw;
-border:1px solid white;
-background-color: rgba(255, 255, 255,0.6);
-box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
-border-radius: 10px;
-overflow: hidden
-}
-.log_cont2{
-float: right;
-margin-right:20vw;
-height:250vw; 
-width: 40vw;
 border:1px solid white;
 background-color: rgba(255, 255, 255,0.6);
 box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
@@ -173,4 +169,10 @@ table.blueTable thead th {
 }
 table.blueTable thead th:first-child {
   border-left: none;
+}
+
+.txt_area{
+    border:none;
+    font-size: 14pt;
+    font-family: 'Quicksand',sans-serif;
 }

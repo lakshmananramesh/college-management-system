@@ -54,21 +54,24 @@ public class student_profile_update extends HttpServlet {
            {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
-                PreparedStatement p=con.prepareStatement("select * from student where rollno=?");
+                PreparedStatement p=con.prepareStatement("select * from student where Stud_id=?");
                 p.setString(1,rollno);
                 ResultSet rs=p.executeQuery();
                 out.println("<center>");
                
-                out.println("<div  class=\"log_cont\">");
+                out.println("<div  class=\"cont3 log_cont\">");
                
                 out.println("<form action=\"student_update\">");
-                out.println("<table>");
+                out.println("<table >");
                 out.println("<h1> STUDENT DETAILS </h1>");
                 while(rs.next())
                 {
-                  out.println("<tr> <th> NAME: </th>  <th> <input type=\"text\" name=\"txt1\" value="+rs.getString("name")+" class=\"ip_txt\"> </th> </tr>");
-                  out.println("<tr> <th> PASSWORD:  </th>  <th><input type=\"text\" name=\"txt2\" value="+rs.getString("password")+" class=\"ip_txt\"></th> </tr>");
-                  
+                  out.println("<tr> <th> NAME : </th>  <th> <input type=\"text\" name=\"txt1\" value="+rs.getString("Stud_name")+" class=\"ip_txt\"> </th> </tr>");
+                  out.println("<tr> <th> ADDRESS :  </th>  <th><input type=\"text\" name=\"txt2\" value="+rs.getString("Address")+" class=\"ip_txt\"></th> </tr>");
+                  out.println("<tr> <th> PARENT CONTACT no. : </th>  <th> <input type=\"text\" name=\"txt3\" value="+rs.getInt("Parent_no")+" class=\"ip_txt\"> </th> </tr>");
+                  out.println("<tr> <th> EMERGENCY NO. :  </th>  <th><input type=\"text\" name=\"txt4\" value="+rs.getInt("Contact_no")+" class=\"ip_txt\"></th> </tr>");
+                  out.println("<tr> <th> EMAIL ID :  </th>  <th><input type=\"text\" name=\"txt5\" value="+rs.getString("Stud_email_id")+" class=\"ip_txt\"></th> </tr>");
+                  out.println("<tr> <th> PASSWORD : </th>  <th> <input type=\"text\" name=\"txt6\" value="+rs.getString("Password")+" class=\"ip_txt\"> </th> </tr>");
                 }
               
                out.println("</table>");     

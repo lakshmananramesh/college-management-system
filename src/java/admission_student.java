@@ -42,7 +42,7 @@ public class admission_student extends HttpServlet {
             out.println("<body>");
             //out.println("hwllo");
             String name=request.getParameter("txt1");
-            
+            name=name.replaceAll(" ", "_");
             String admission_no=request.getParameter("txt2");
             String a_d=request.getParameter("dd");
             String a_m=request.getParameter("mm");
@@ -69,7 +69,7 @@ public class admission_student extends HttpServlet {
             
             String religion=request.getParameter("txt12");
             String address=request.getParameter("txt13");
-            
+            address=address.replaceAll(" ", "_");
             String district=request.getParameter("txt14");
             String state=request.getParameter("txt15");
             String nation=request.getParameter("txt16");
@@ -85,19 +85,23 @@ public class admission_student extends HttpServlet {
             String parent_email=request.getParameter("txt35");
             //out.println(parent_email);
             String hs_name=request.getParameter("txt23");
+            hs_name=hs_name.replaceAll(" ", "_");
             String hs_year=request.getParameter("txt24");
             String hs_mark=request.getParameter("txt25");
             
             String hss_name=request.getParameter("txt26");
+            hss_name=hss_name.replaceAll(" ", "_");
             String hss_year=request.getParameter("txt27");
             String hss_mark=request.getParameter("txt28");
             
             String ug_name=request.getParameter("txt29");
+            ug_name=ug_name.replaceAll(" ", "_");
             String ug_year=request.getParameter("txt30");
             String ug_mark=request.getParameter("txt31");
             
             
             String pg_name=request.getParameter("txt32");
+            pg_name=pg_name.replaceAll(" ", "_");
             String pg_year=request.getParameter("txt33");
             String pg_mark=request.getParameter("txt34");
             //String r="123";

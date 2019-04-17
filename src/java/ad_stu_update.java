@@ -55,7 +55,7 @@ public class ad_stu_update extends HttpServlet {
             {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
-                PreparedStatement pa=con.prepareStatement("update student set name=?,password=? where rollno=?");
+                PreparedStatement pa=con.prepareStatement("update student set Stud_name=?, Password=? where Stud_id=?");
                 pa.setString(1,b);
                 pa.setString(2,c);
                 pa.setString(3,a);

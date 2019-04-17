@@ -46,30 +46,37 @@ public class student_update extends HttpServlet {
             if(session1!=null)
             {
                rollno=(String)session1.getAttribute("rollno");
-             
             }
-
-            
             String b=request.getParameter("txt1");
             String c=request.getParameter("txt2");
+            String d=request.getParameter("txt3");
+            String e=request.getParameter("txt4");
+            String f=request.getParameter("txt5");
+            String g=request.getParameter("txt6");
+            int a1=Integer.parseInt(d);
+            int a2=Integer.parseInt(e);
+            b = b.replaceAll(" ", "_");
+            c = c.replaceAll(" ", "_");
             try
             {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
-                PreparedStatement pa=con.prepareStatement("update student set name=?,password=? where rollno=?");
-                
+                PreparedStatement pa=con.prepareStatement("update student set Stud_name=?,Address=?,Parent_no=?,Contact_no=?,Stud_email_id=?,Password=? where Stud_id=?");
                 pa.setString(1,b);
                 pa.setString(2,c);
-                pa.setString(3,rollno);
-              
+                pa.setInt(3, a1);
+                pa.setInt(4,a2);
+                pa.setString(5,f);
+                pa.setString(6, g);
+                pa.setString(7,rollno);
                 pa.executeUpdate();
                 response.sendRedirect("student_home.html");
 
               
            }
-             catch(Exception e)
+             catch(Exception ex)
              {
-                 out.println(e);
+                 out.println(ex);
              }
             out.println("</body>");
             out.println("</html>");
