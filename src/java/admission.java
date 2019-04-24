@@ -44,7 +44,7 @@ public class admission extends HttpServlet {
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
                 String rollno = request.getParameter("txt1");
                 String pass = request.getParameter("txt2");
-                PreparedStatement ps = con.prepareStatement("Select id,password from admission_dep where id = ? and password = ?");
+                PreparedStatement ps = con.prepareStatement("Select Admission_id,password from admission where Admission_id = ? and Password = ?");
                 ps.setString(1,rollno);
                 ps.setString(2,pass);
                 ResultSet rs = ps.executeQuery();

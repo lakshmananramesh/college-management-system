@@ -34,7 +34,7 @@
             </div>
         </div>
         
-         <div class="log_cont1" style="width: 100%; float: left;">
+         <div class="log_cont1" style="width: 100%;">
             <center>
              <form action="admission_student" method="post">
                 
@@ -167,7 +167,9 @@
               </center>
               <br>  <br>
         </div>
-        <%--
+        <%
+            try 
+            {
             String name=request.getParameter("txt1");
             name=name.replaceAll(" ", "_");
             String admission_no=request.getParameter("txt2");
@@ -247,9 +249,7 @@
              int d=Integer.parseInt(admission_no);
              String password="ccms12345";
              
-          try
-               
-            {
+          
                  Class.forName("com.mysql.jdbc.Driver");
              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
                
@@ -342,6 +342,6 @@
             {
                 out.println(e);
             }
-        --%>
+        %>
     </body>
 </html>
