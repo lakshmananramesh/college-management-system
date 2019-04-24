@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : add_student
     Created on : Apr 24, 2019, 10:35:49 AM
     Author     : khsci5mca16124
@@ -19,11 +19,27 @@
             {
                 letter = /^[A-Za-z]+$/;
                 num=/^[0-9]+$/;
-                var n=document.getElementIdBy("name").value;
-                if(!n.match(letter))
-                    document.getElementIdBy("namelab").value="Not valid";
-                
-                
+                n=document.getElementIdBy("name").value;
+                ad=document.getElementIdBy("txt3").value;
+                addate=document.getElementIdBy("date").value;
+                dateob=document.getElementIdBy("dob").value;
+                lab=document.getElementByClass("namelab");
+                if(n.equals(null))
+                    lab.value="Should not be null";
+                else if(n.match(letter)){}
+                else {
+                  lab.value="not valid! alphabets only";
+                }
+                /*if(ad.match(num)){}
+                else {
+                  document.getElementIdBy("adlab").value="Only Integers";
+                }
+                if(addate.equals(null)){
+                  document.getElementIdBy("addate").value="Field can't be null";
+                }
+                if(dob.equals(null)){
+                  document.getElementIdBy("dateob").value="Field can't be null";
+                }*/
             }
         </script>
     </head>
@@ -33,142 +49,124 @@
                 <img src="gallery/logo.png" style="width: 60%; height: 35%;">
             </div>
         </div>
-        
-         <div class="log_cont1" style="width: 100%;">
+         <div class="cont" style="width: 100%;">
             <center>
-             <form action="admission_student" method="post">
-                
+             <form method="post">
                 <table  cellpadding="6create" style="width:80%;">
-                    
                     <tr>
-                        <td> Name :</td> 
-                        <td> <input type="text" name="txt1" class="input" id="name"><label for="name" id="namelab"></label><h5 style="color:red">*</h5></td>
-                         <td>Admission No :</td> 
-                          <td> <input type="text" name="txt3" class="input"> </td>
-                        
-                        <td>Admission date :</td> 
-                        <td> dd-mm-yy <br> <input type="date"><h5 style="color:red">*</h5></td>
-                        <td>DOB :</td> 
-                        <td> dd-mm-yy <br> <input type="date"><h5 style="color:red">*</h5></td>
-                        <td>Gender :</td> 
-                        <td> <input type="radio" name="txt5" value="male" id='g' >Male <input type="radio" name="txt5" id='g' value="female" >Female<label for="name" id="genlab"></label> <h5 style="color:red">*</h5></td>
-                        
+                        <td> Name :</td>
+                        <td> *<input type="text" name="txt1" class="input" id="name" onblur="valid();"><input type="text" name="namelab" class="label"></td>
+                        <td>Admission No :</td>
+                        <td> *<input type="text" name="txt3" class="input" id="txt3"><input type="text" id="adlab" readonly="readonly" class="label"> </td>
+                        <td>Admission date :</td>
+                        <td> mm-dd-yy *<br> <input type="date" id="date"><input type="text" id="addate" readonly="readonly" class="label"></td>
+                        <td>DOB :</td>
+                        <td> mm-dd-yy *<br><input type="date" id="dob"><input type="text" id="dateob" readonly="readonly" class="label"></td>
+                        <td>Gender :</td>
+                        <td> <input type="radio" name="txt5" value="male" id='g' >Male <input type="radio" name="txt5" id='g' value="female" >Female</td>
                     </tr>
                     <tr>
-                        <td>Course :</td> 
-                        <td><select name="course" style="width: 100px;">
-        <option selected="selected" value="bca">bca</option>
-        <option value="ba english">ba english</option>
-        <option value="mca">mca</option>
-          <option value="ma english">ma english</option>
-           <option value="bsc">bsc</option>
-                            </select><h5 style="color:red">*</h5></td>
-                    <td> Father Name :</td> 
-                        <td> <input type="text" name="txt7" class="input" ><h5 style="color:red">*</h5><label for="name" id="fathrlab"></label> </td>
-                         <td>Mother Name :</td> 
-                        <td> <input type="text" name="txt8" class="input" ><h5 style="color:red">*</h5><label for="name" id="mothrlab"></label> </td>
-                        <td>Father job:</td> 
+                        <td>Course :</td>
+                        <td>*<select name="course" style="width: 100px;" class="btn_lg">
+                          <option selected="selected" value="bca">bca</option>
+                          <option value="ba english">ba english</option>
+                          <option value="mca">mca</option>
+                          <option value="ma english">ma english</option>
+                          <option value="bsc">bsc</option>
+                            </select></td>
+                    <td> Father Name :</td>
+                        <td> *<input type="text" name="txt7" class="input" > </td>
+                         <td>Mother Name :</td>
+                        <td>* <input type="text" name="txt8" class="input" > </td>
+                        <td>Father job:</td>
                         <td> <input type="text" name="txt9" class="input"> </td>
-                        <td>Mother job :</td> 
+                        <td>Mother job :</td>
                         <td> <input type="text" name="txt10" class="input"> </td>
-                        
+
                     </tr>
-                    
+
                     <tr>
-                        <td>Father Number :</td> 
-                        <td> <input type="text" name="txt11" class="input" ><h5 style="color:red">*</h5><label for="name" id="fathrnum"></label> </td>
-                        <td>Mother Number :</td> 
-                        <td> <input type="text" name="txt12" class="input" ><h5 style="color:red">*</h5><label for="name" id="mothrnum"></label> </td>
-                    <td> Email id :</td> 
-                        <td> <input type="text" name="txt13" class="input" > </td>
-                         <td>Religion :</td> 
+                        <td>Father Number :</td>
+                        <td>* <input type="text" name="txt11" class="input" > </td>
+                        <td>Mother Number :</td>
+                        <td>* <input type="text" name="txt12" class="input" > </td>
+                    <td> Email id :</td>
+                        <td> *<input type="text" name="txt13" class="input" > </td>
+                         <td>Religion :</td>
                         <td> <input type="text" name="txt14" class="input" > </td>
-                        <td>Address:</td> 
-                        <td> <textarea cols="20" rows="4"></textarea>  </td>
-                       
+                        <td>Address:</td>
+                        <td>* <textarea cols="20" rows="4"></textarea>  </td>
+
                     </tr>
-                    
+
                      <tr>
-                          <td>District :</td> 
-                        <td> <input type="text" name="txt16" class="input" > </td>
+                          <td>District :</td>
+                        <td> *<input type="text" name="txt16" class="input" > </td>
                         <td> State:</td>
-                        <td> <input type="text" name="txt17" class="input" > </td>
-                        <td>Nationality :</td> 
-                        <td> <input type="text" name="txt18" class="input" > </td>
-                    <td> Guradian name :</td> 
+                        <td> *<input type="text" name="txt17" class="input" > </td>
+                        <td>Nationality :</td>
+                        <td> *<input type="text" name="txt18" class="input" > </td>
+                        <td> Guradian name :</td>
                         <td> <input type="text" name="txt19" class="input" > </td>
-                         <td>Guradian address :</td> 
+                         <td>Guradian address :</td>
                         <td> <input type="text" name="txt20" class="input" > </td>
-                        
-                        
-                        
                     </tr>
                     <tr>
-                        <td>Guradian number:</td> 
+                        <td>Guradian number:</td>
                         <td> <input type="text" name="txt21" class="input"> </td>
-                        <td>Latarl entry :</td> 
+                        <td>Latarl entry :</td>
                         <td> <input type="radio" name="txt22" value="yes" >Yes <input type="radio" name="txt22" value="no" >No </td>
-                        <td>College Bus :</td> 
+                        <td>College Bus :</td>
                         <td> <input type="radio" name="txt23" value="yes" >Yes <input type="radio" name="txt23" value="no" >No </td>
                         </tr>
-                    
-                     
-                </table>
+              </table>
                     <br> <br>
                      <table class="blueTable">
-<thead>
-<tr>
-<th>Qalification</th>
-<th>Institution Name</th>
-<th>Year passed</th>
-<th>Mark</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>High school<h5 style="color:red">*</h5></td>
-<td><input type="text" name="txt25" class="input1" ></td>
-<td><input type="text" name="txt26" class="input1" ></td>
-<td><input type="text" name="txt27" class="input1" ></td>
-</tr>
-<tr>
-<td>Higher Secondary<h5 style="color:red">*</h5></td>
-<td><input type="text" name="txt28" class="input11" ></td>
-<td><input type="text" name="txt29" class="input1" ></td>
-<td><input type="text" name="txt30" class="input1" ></td>
-</tr>
-<tr>
-<td>Under Graguation</td>
-<td><input type="text" name="txt31" class="input1" ></td>
-<td><input type="text" name="txt32" class="input1" ></td>
-<td><input type="text" name="txt34" class="input1" ></td>
-</tr>
-<tr>
-<td>Post Graguation</td>
-<td><input type="text" name="txt35" class="input1" ></td>
-<td><input type="text" name="txt36" class="input1" ></td>
-<td><input type="text" name="txt37" class="input1" ></td>
-</tr>
-</tbody>
-</table>
-                
+                       <thead>
+                         <tr>
+                            <th>Qalification</th>
+                            <th>Institution Name</th>
+                            <th>Year passed</th>
+                            <th>Mark</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>High school</td>
+                            <td>*<input type="text" name="txt25" class="input1" ></td>
+                            <td>*<input type="text" name="txt26" class="input1" ></td>
+                            <td>*<input type="text" name="txt27" class="input1" ></td>
+                          </tr>
+                          <tr>
+                            <td>Higher Secondary<h5 style="color:red">*</h5></td>
+                            <td>*<input type="text" name="txt28" class="input11" ></td>
+                            <td>*<input type="text" name="txt29" class="input1" ></td>
+                            <td>*<input type="text" name="txt30" class="input1" ></td>
+                          </tr>
+                          <tr>
+                            <td>Under Graguation</td>
+                            <td><input type="text" name="txt31" class="input1" ></td>
+                            <td><input type="text" name="txt32" class="input1" ></td>
+                            <td><input type="text" name="txt34" class="input1" ></td>
+                          </tr>
+                          <tr>
+                            <td>Post Graguation</td>
+                            <td><input type="text" name="txt35" class="input1" ></td>
+                            <td><input type="text" name="txt36" class="input1" ></td>
+                            <td><input type="text" name="txt37" class="input1" ></td>
+                          </tr>
+                        </tbody>
+                      </table>
                 <br> <br>
                 <input type="submit" value="Submit" class="btn_lg" onclick="valid()">
               <br><br>
-                      
-                
-    
-    
-    
-   
             </form>
                 <a href="admission_home.html"> <input type="submit" value="Cancel" class="btn_lg" > </a>
               </center>
-              <br>  <br>
+              <br><br>
         </div>
         <%
-            try 
+            try
             {
             String name=request.getParameter("txt1");
             name=name.replaceAll(" ", "_");
@@ -177,37 +175,37 @@
             String a_m=request.getParameter("mm");
             String a_y=request.getParameter("yy");
             String admission_date=a_d+"-"+a_m+"-"+a_y;
-          
+
             String b_d=request.getParameter("bdd");
             String b_m=request.getParameter("bmm");
             String b_y=request.getParameter("byy");
             String dob=b_d+"-"+b_m+"-"+b_y;
-            
+
             String gender=request.getParameter("txt3");
             String course=request.getParameter("txt4");
-            
+
             String f_name=request.getParameter("txt5");
             String m_name=request.getParameter("txt6");
             String f_job=request.getParameter("txt7");
             String m_job=request.getParameter("txt8");
-            
-            
+
+
             String f_num=request.getParameter("txt9");
             String m_num=request.getParameter("txt10");
             String email=request.getParameter("txt11");
-            
+
             String religion=request.getParameter("txt12");
             String address=request.getParameter("txt13");
             address=address.replaceAll(" ", "_");
             String district=request.getParameter("txt14");
             String state=request.getParameter("txt15");
             String nation=request.getParameter("txt16");
-            
+
             String g_name=request.getParameter("txt17");
-            
+
             String g_address=request.getParameter("txt18");
             String g_num=request.getParameter("txt19");
-            
+
             String latral=request.getParameter("txt20");
             String college_bus=request.getParameter("txt21");
             String bus_id=request.getParameter("txt22");
@@ -217,18 +215,18 @@
             hs_name=hs_name.replaceAll(" ", "_");
             String hs_year=request.getParameter("txt24");
             String hs_mark=request.getParameter("txt25");
-            
+
             String hss_name=request.getParameter("txt26");
             hss_name=hss_name.replaceAll(" ", "_");
             String hss_year=request.getParameter("txt27");
             String hss_mark=request.getParameter("txt28");
-            
+
             String ug_name=request.getParameter("txt29");
             ug_name=ug_name.replaceAll(" ", "_");
             String ug_year=request.getParameter("txt30");
             String ug_mark=request.getParameter("txt31");
-            
-            
+
+
             String pg_name=request.getParameter("txt32");
             pg_name=pg_name.replaceAll(" ", "_");
             String pg_year=request.getParameter("txt33");
@@ -240,7 +238,7 @@
             int h2=Integer.parseInt(hss_year);
             int h3=Integer.parseInt(ug_year);
             int h4=Integer.parseInt(pg_year);
-            
+
             int m1=Integer.parseInt(hs_mark);
             int m2=Integer.parseInt(hss_mark);
             int m3=Integer.parseInt(ug_mark);
@@ -248,11 +246,11 @@
                        //out.println(name+""+course+""+j_year);
              int d=Integer.parseInt(admission_no);
              String password="ccms12345";
-             
-          
+
+
                  Class.forName("com.mysql.jdbc.Driver");
              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
-               
+
               PreparedStatement ps = con.prepareStatement("insert into student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
                 ps.setString(1,name);
                 ps.setInt(2,d);
@@ -294,16 +292,16 @@
                  ps.setString(38,password);
                  ps.setInt(39,r);
                   ps.setString(40,a_y);
-               
-                
-                
+
+
+
                 ps.executeUpdate();
                 int i=1;
                 String a="",b ="";
                 int h=0;
                 String f="";
-              
-                 
+
+
                   PreparedStatement pa = con.prepareStatement("select * from student where course=? and year=? order by name asc");
                   pa.setString(1,course);
                   pa.setString(2,a_y);
@@ -313,9 +311,9 @@
                      r=0;
                     f=Integer.toString(r);
                     a=Integer.toString(i);
-                    
+
                     f=course+a_y+a;
-                    
+
                    b=rs.getString("name");
                    h=rs.getInt("admission_no");
                    r=Integer.parseInt(f);
@@ -324,10 +322,10 @@
                 p.setString(2,b);
                 p.setInt(3,h);
                 p.executeUpdate();
-                 
+
                    //out.println(r);
                     i=i+1;
-                   
+
                  }
                 rs.close();
                  PreparedStatement pf = con.prepareStatement("insert into parent values (?,?,?)");
@@ -340,7 +338,7 @@
             }
             catch(Exception e)
             {
-                out.println(e);
+                out.println(e.getMessage());
             }
         %>
     </body>

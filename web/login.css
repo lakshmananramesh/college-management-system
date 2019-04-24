@@ -2,11 +2,11 @@ body
             {
                 font-family: 'Quicksand', sans-serif;
             }
-            
+
             input:focus {
                             outline:none !important;
                         }
-                        
+
             .btn_lg
             {
                 box-shadow: none;
@@ -17,9 +17,9 @@ body
                 background-color:#2874A6  ;
                 color:black;
                 font-family: 'Montserrat', sans-serif;
-                
+
             }
-            
+
             .btn_lg:hover
             {
                 background-color: #5D6D7E ;
@@ -32,7 +32,7 @@ background-repeat:no-repeat;
 background-attachment: fixed;
 }
 .cont1{
-float: left;width: 45%;height:60%; 
+float: left;width: 45%;height:60%;
 }
 .log_cont{
 float: left;
@@ -44,8 +44,20 @@ box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
 border-radius: 10px;
 overflow: hidden
 }
+.cont{
+margin-left:.4vw;
+width:30vw;
+border:1px solid white;
+background-color: rgba(255, 255, 255,0.3);
+box-shadow: 10px 10px 25px -5px rgba(0,0,0,1);
+border-radius: 10px;
+overflow: hidden
+}
 .ip_txt{
 border:none;background-color:transparent;border-bottom: 2px solid #333333;font-size:14pt;
+}
+.label{
+  border: none;background-color: transparent;font-size: 10pt;
 }
 .cont2{
     float: left;
@@ -62,8 +74,8 @@ border:none;background-color:transparent;border-bottom: 2px solid #333333;font-s
 }
 
 .dropbtn {
-  
-  
+
+
                 box-shadow: none;
                 border-radius: 8px;
                 width:9vw;
@@ -76,13 +88,13 @@ border:none;background-color:transparent;border-bottom: 2px solid #333333;font-s
 
 .dropdown {
   position: relative;
-  
+
   display: inline-block;
 }
 
 .dropdown-content {
   display: none;
-   
+
   position: absolute;
   background-color: #f9f9f9;
   min-width: 80px;
