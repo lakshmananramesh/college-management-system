@@ -15,32 +15,21 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
         <script type="text/javascript">
-            function valid()
-            {
-                letter = /^[A-Za-z]+$/;
-                num=/^[0-9]+$/;
-                n=document.getElementIdBy("name").value;
-                ad=document.getElementIdBy("txt3").value;
-                addate=document.getElementIdBy("date").value;
-                dateob=document.getElementIdBy("dob").value;
-                lab=document.getElementByClass("namelab");
-                if(n.equals(null))
-                    lab.value="Should not be null";
-                else if(n.match(letter)){}
-                else {
-                  lab.value="not valid! alphabets only";
-                }
-                /*if(ad.match(num)){}
-                else {
-                  document.getElementIdBy("adlab").value="Only Integers";
-                }
-                if(addate.equals(null)){
-                  document.getElementIdBy("addate").value="Field can't be null";
-                }
-                if(dob.equals(null)){
-                  document.getElementIdBy("dateob").value="Field can't be null";
-                }*/
-            }
+
+        function regvalidate()
+        {
+          var name= document.getElementById("name");
+          var letter=/^[A-Za-z]+$/;
+          error=document.getElementById("txt1");
+          if(name.equals(null)){
+            alert("can't be null");
+          }
+          if(name.match(letter)
+            return true;
+          else {
+            error.value="not valid!Only alphabet";
+          }
+        }
         </script>
     </head>
     <body class="bg_img">
@@ -49,13 +38,47 @@
                 <img src="gallery/logo.png" style="width: 60%; height: 35%;">
             </div>
         </div>
+        <div class="cont1">
+
+            <table cellspacing="10create ">
+                <tr>
+                        <th><a href="admission_home.html"><input type="submit" value="HOME" class="btn_lg"> </a> </th>
+
+                            <th><div class="dropdown">
+                           <button class="dropbtn">STUDENT</button>
+                           <div class="dropdown-content">
+                           <a href="add_student.jsp">ADD STUDENT</a>
+                           <a href="late_entery_form">LATE ENTERY </a>
+                           <a href="admission_update.html">STUDENT UPDATE</a>
+                          <a href="admission_student_delete.html">DELETE STUDENT</a>
+
+                           </div>
+                         </div></th>
+
+                         <th><div class="dropdown">
+                           <button class="dropbtn">COLLEGE BUS</button>
+                           <div class="dropdown-content">
+                           <a href="bus_student_add">ADD STUDENT</a>
+
+                           <a href="bus_student_update.html">STUDENT UPDATE</a>
+                          <a href="bus_student_delete.html">DELETE STUDENT</a>
+
+                           </div>
+                         </div></th>
+                        <th><a href="logout"><input type="submit" value="LOGOUT" class="btn_lg"> </a> </th>
+                </tr>
+
+            </table>
+
+        </div>
          <div class="cont" style="width: 100%;">
             <center>
-             <form method="post">
+             <form method="post" name="form" >
                 <table  cellpadding="6create" style="width:80%;">
+                    <tr><td><ul class="errorMessages"></ul></td></tr>
                     <tr>
                         <td> Name :</td>
-                        <td> *<input type="text" name="txt1" class="input" id="name" onblur="valid();"><input type="text" name="namelab" class="label"></td>
+                        <td> *<input type="text" name="txt1" class="input" id="name" onblur="regvalidate()"><input type="text" id="txt1" name="namelab" class="label" readonly></td>
                         <td>Admission No :</td>
                         <td> *<input type="text" name="txt3" class="input" id="txt3"><input type="text" id="adlab" readonly="readonly" class="label"> </td>
                         <td>Admission date :</td>
@@ -91,7 +114,7 @@
                         <td>Mother Number :</td>
                         <td>* <input type="text" name="txt12" class="input" > </td>
                     <td> Email id :</td>
-                        <td> *<input type="text" name="txt13" class="input" > </td>
+                        <td> *<input type="email" name="txt13" class="input" > </td>
                          <td>Religion :</td>
                         <td> <input type="text" name="txt14" class="input" > </td>
                         <td>Address:</td>
@@ -158,7 +181,7 @@
                         </tbody>
                       </table>
                 <br> <br>
-                <input type="submit" value="Submit" class="btn_lg" onclick="valid()">
+                <input type="submit" value="Submit" class="btn_lg" >
               <br><br>
             </form>
                 <a href="admission_home.html"> <input type="submit" value="Cancel" class="btn_lg" > </a>
