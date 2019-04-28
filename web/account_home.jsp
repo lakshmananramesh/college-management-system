@@ -55,8 +55,14 @@
 <th><a href="logout"><input type="submit" value="LOGOUT" class="btn_lg"> </a> </th> 
                     </tr>
                 </table>
-            
             </div>
         </div>
+        <div>
+            <div>
+                <span id="text"></span>
+            </div>
+        </div>
+        <%
+        %>
     </body>
 </html>

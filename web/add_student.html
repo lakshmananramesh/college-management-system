@@ -13,6 +13,25 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
         <script type="text/javascript">
+            email = document.getElementById("email");
+            email.addEventListener("input",function valid(event){
+                if(email.validity.typeMismatch){
+                    email.setCoustomValidity("Not a valid id");
+                }
+                else{
+                    email.setCoustomValidity("");
+                }
+            });
+            letter = /^[A-Za-z]+$/;
+            name = document.getElementById("name");
+            name.addEventListener("input",function namval(event){
+               if(letter.match(name)){
+                   return true;
+               } 
+               else{
+                   name.setCoustomValidity("only alphabets allowed");
+               }
+            });
             function valid()
             {
                 letter = /^[A-Za-z]+$/;
@@ -34,8 +53,8 @@ and open the template in the editor.
         
          <div class="log_cont1" style="width: 100%; float: left;">
             <center>
-             <form action="admission_student" method="post">
-                
+<!--             <form action="admission_student" method="post">-->
+            <form method="post">
                 <table  cellpadding="6create" style="width:80%;">
                     
                     <tr>
@@ -152,7 +171,7 @@ and open the template in the editor.
 </table>
                 
                 <br> <br>
-                <input type="submit" value="Submit" class="btn_lg" onclick="valid()">
+                <input type="submit" value="Submit" class="btn_lg">
               <br><br>
                       
                 
