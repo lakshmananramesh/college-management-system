@@ -4,6 +4,7 @@
     Author     : RL
 --%>
 
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -94,8 +95,21 @@
         </div>
         <div>
           <div class="log_cont">
-              <textarea rows="10" cols="20"></textarea>
-              
+              <textarea rows="10" cols="20" id="txta"></textarea>
+              <%
+                  try{
+                  String txt=request.getParameter("txta");
+                  txt.replaceAll(" ","_");
+                  Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cccms","root","");
+                PreparedStatement ps = con.prepareStatement("insert into home values (?)");
+                ps.setString(0,txt);
+                ps.executeQuery();
+                  }catch(Exception e)
+                  { 
+                      out.println(e); 
+                  }
+              %>
           </div>
         </div>
     </body>
