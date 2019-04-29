@@ -36,7 +36,7 @@ public class admin_add_course2 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet admin_add_course2</title>");            
+            out.println("<title>Servlet admin_add_course2</title>");
            out.println("<link href=\"login.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"slide.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"https://fonts.googleapis.com/css?family=Montserrat:600\" rel=\"stylesheet\">\n" +
@@ -129,9 +129,9 @@ public class admin_add_course2 extends HttpServlet {
 "                </table>\n" +
 "            </div>\n" +
 "        </div>");
-            
-            
-            
+
+
+
              String a="",b="",c="";
              int k=1;
               HttpSession session4=request.getSession(false);
@@ -140,8 +140,8 @@ public class admin_add_course2 extends HttpServlet {
                a=(String)session4.getAttribute("a");
                b=(String)session4.getAttribute("b");
                c=(String)session4.getAttribute("c");
-             
-            } 
+
+            }
             int d=Integer.parseInt(c);
             int i=1;
             int y=0;
@@ -153,24 +153,24 @@ public class admin_add_course2 extends HttpServlet {
                 out.println("<table cellspacing=20 >");
                 String s=request.getParameter("txt"+i+"");
                 int j=1;
-                
+
                 int s1=Integer.parseInt(s);
                 l[y]=s;
-              out.println("<tr><th colspan=2><h2> SEMESTER"+i+" </h2></th></tr>");  
-              out.println("<tr><th>Subject</th> <th>CREDIT</th></tr>");  
+              out.println("<tr><th colspan=2><h2> SEMESTER"+i+" </h2></th></tr>");
+              out.println("<tr><th>Subject</th> <th>CREDIT</th></tr>");
                 while(j<=s1)
                 {
-                    out.println("<tr> <th> <input type=\"text\" name=\"txt"+k+"\" class=\"input\" > </th> <th> <input type=\"text\" name=\"cxt"+k+"\" class=\"input\" > </th></tr>");  
+                    out.println("<tr> <th> <input type=\"text\" name=\"txt"+k+"\" class=\"input\" pattern=\"[A-Za-z]+\" required> </th> <th> <input type=\"text\" name=\"cxt"+k+"\" class=\"input\" pattern=\"[0-9]+\" required> </th></tr>");  
                 k++;
                 j++;
-                } 
+                }
                 y++;
                 i++;
                 out.println("</table>");
                 out.println("<br>");
             }
              out.println("  <input type=\"submit\" value=\"submit\" class=\"btn_lg\"> </center> <br> <br>");
-           
+
               if(!a.equals(" "))
                 {
                    HttpSession session5=request.getSession();
@@ -178,11 +178,11 @@ public class admin_add_course2 extends HttpServlet {
                     session5.setAttribute("b",b);
                     session5.setAttribute("c",c);
                     session5.setAttribute("l",l);
-                 
+
                 }
             // request.setAttribute("l", l);
              out.println("</form>  </div> </center> <br> <br> <br> ");
-            
+
             out.println("</body>");
             out.println("</html>");
         }

@@ -35,7 +35,7 @@ public class admin_add_course1 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet admin_add_course1</title>");            
+            out.println("<title>Servlet admin_add_course1</title>");
          out.println("   <link href=\"login.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"slide.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"https://fonts.googleapis.com/css?family=Montserrat:600\" rel=\"stylesheet\">\n" +
@@ -137,7 +137,7 @@ public class admin_add_course1 extends HttpServlet {
          out.println("<h2> NUMBER OF SUBJECT </h2>");
          while(i<=n)
          {
-             out.println("<tr> <th>Semester "+i+"</th> <th><select name=\"txt"+i+"\" style=\"width: 100%;\" ><option value=\"1\"> 1 </option>\n" +
+             out.println("<tr> <th>Semester "+i+"</th> <th><select name=\"txt"+i+"\" style=\"width: 100%;\" requireds><option value=\"\">-Select Semester-</option><option value=\"1\"> 1 </option>\n" +
 "                                             <option value=\"2\"> 2 </option>\n" +
 "                                             <option value=\"3\"> 3 </option>\n" +
 "                                             <option value=\"4\"> 4 </option>\n" +
@@ -151,10 +151,10 @@ public class admin_add_course1 extends HttpServlet {
 "                                         </select> </th></tr>");
              i=i+1;
          }
-         
-         
-                
-         
+
+
+
+
          out.println("</table> <br> <input type=\"submit\" value=\"submit\" class=\"btn_lg\"> </center> <br> <br>");
           if(!a.equals(" "))
                 {
@@ -162,9 +162,9 @@ public class admin_add_course1 extends HttpServlet {
                     session4.setAttribute("a",a);
                     session4.setAttribute("b",b);
                     session4.setAttribute("c",c);
-                 
+
                 }
-          
+
          out.println("</form>  </div> ");
             out.println("</body>");
             out.println("</html>");

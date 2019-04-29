@@ -14,114 +14,115 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
     </head>
-    
+
    <body class="bg_img">
         <div>
             <div class="cont1">
                 <img src="gallery/logo.png" style="width: 60%; height: 35%;">
             </div>
-            <div class="cont1"> 
+            <div class="cont1">
                 <table cellspacing="10create ">
                      <tr>
-                            <th><a href="admin_home.html"><input type="submit" value="HOME" class="btn_lg"> </a> </th> 
-                         
+                            <th><a href="admin_home.html"><input type="submit" value="HOME" class="btn_lg"> </a> </th>
+
                                 <th><div class="dropdown">
-                               <button class="dropbtn">COURSE</button> 
+                               <button class="dropbtn">COURSE</button>
                                <div class="dropdown-content">
-                               <a href="admin_add_course.html">ADD COURSE</a> 
-                               
-                               <a href="">UPDATE COURSE</a> 
-                              <a href="">DELETE COURSE</a> 
- 
-                               </div>
-                             </div></th>
-                             
-                             <th><a href=""><input type="submit" value="UPDATE FEE" class="btn_lg"> </a> </th>
-                             
-                             <th><div class="dropdown">
-                               <button class="dropbtn">COLLEGE BUS</button> 
-                               <div class="dropdown-content">
-                               <a href="admin_add_route.html">ADD ROUTE</a> 
-                              
-                               <a href="admin_update_route">UPDATE ROUTE</a> 
-                              <a href="admin_delete_route">DELETE ROUTE</a> 
+                               <a href="admin_add_course.html">ADD COURSE</a>
+
+                               <a href="">UPDATE COURSE</a>
+                              <a href="">DELETE COURSE</a>
 
                                </div>
                              </div></th>
-                             
-                              <th><div class="dropdown">
-                               <button class="dropbtn">TEACHER</button> 
+
+                             <th><a href=""><input type="submit" value="UPDATE FEE" class="btn_lg"> </a> </th>
+
+                             <th><div class="dropdown">
+                               <button class="dropbtn">COLLEGE BUS</button>
                                <div class="dropdown-content">
-                               <a href="">ADD TEACHER</a> 
-                             
-                               <a href="">UPDATE TEACHER</a> 
-                              <a href="">DELETE TEACHER</a> 
-                               <a href=""> ADD ATTENDENCE</a> 
+                               <a href="admin_add_route.html">ADD ROUTE</a>
+
+                               <a href="admin_update_route">UPDATE ROUTE</a>
+                              <a href="admin_delete_route">DELETE ROUTE</a>
+
+                               </div>
+                             </div></th>
+
+                              <th><div class="dropdown">
+                               <button class="dropbtn">TEACHER</button>
+                               <div class="dropdown-content">
+                               <a href="">ADD TEACHER</a>
+
+                               <a href="">UPDATE TEACHER</a>
+                              <a href="">DELETE TEACHER</a>
+                               <a href=""> ADD ATTENDENCE</a>
                                  <a href="">UPDATE ATTENDENCE</a>
                                </div>
                              </div></th> </tr>
-        <tr>                  
-            
+        <tr>
+
             <th><div class="dropdown">
-                               <button class="dropbtn">EXAM TIMETABLE</button> 
+                               <button class="dropbtn">EXAM TIMETABLE</button>
                                <div class="dropdown-content">
-                               <a href="">PERIODICAL</a> 
-                           <a href="">UPDATE PERI0DICAL</a> 
-                           <a href="">SEMSETER</a> 
-                           <a href="">UPDATE SEMESTER</a> 
-                               
+                               <a href="">PERIODICAL</a>
+                           <a href="">UPDATE PERI0DICAL</a>
+                           <a href="">SEMSETER</a>
+                           <a href="">UPDATE SEMESTER</a>
+
 
                                </div>
                              </div></th>
-            
-            
+
+
             <th><div class="dropdown">
-                               <button class="dropbtn">CLASS TIMETABLE</button> 
+                               <button class="dropbtn">CLASS TIMETABLE</button>
                                <div class="dropdown-content">
-                               <a href="">ADD TIMETABLE</a> 
-                           <a href="">UPDATE TIMETABE</a> 
-                          
-                               
+                               <a href="">ADD TIMETABLE</a>
+                           <a href="">UPDATE TIMETABE</a>
+
+
 
                                </div>
                              </div></th>
                                <th><div class="dropdown">
-                               <button class="dropbtn">TEACHER TIMETABLE</button> 
+                               <button class="dropbtn">TEACHER TIMETABLE</button>
                                <div class="dropdown-content">
-                               <a href="">ADD TIMETABLE</a> 
-                           <a href="">UPDATE TIMETABE</a> 
-                          
-                               
+                               <a href="">ADD TIMETABLE</a>
+                           <a href="">UPDATE TIMETABE</a>
 
-                               </div> 
+
+
+                               </div>
                              </div></th>
-      <th><a href="logout"><input type="submit" value="LOGOUT" class="btn_lg"> </a> </th> 
+      <th><a href="logout"><input type="submit" value="LOGOUT" class="btn_lg"> </a> </th>
                     </tr>
-              
+
                 </table>
             </div>
         </div>
-       
-       
+
+
         <br><br><br><br><br><br><br>
             <center>
                 <div class="log_cont" style="float:left; width: 50%;">
-            
+
                  <form action="admin_add_course1" method="post">
-                    
+
                         <table cellpadding="5" cellspacing="10" >
                                 <tr>
                                         <th> <h1> ADD NEW COURSE </h1></th>
                                 </tr>
                                 <tr>
-                                        <th><input type="text" name="txt1" class="ip_txt" placeholder="COURSE ID"> </th>
+                                        <th><input type="text" name="txt1" class="ip_txt" placeholder="COURSE ID" pattern="[0-9]+" required> </th>
                                 </tr>
                                  <tr>
-                                        <th><input type="text" name="txt2" class="ip_txt" placeholder="COURSE NAME"> </th>
+                                        <th><input type="text" name="txt2" class="ip_txt" placeholder="COURSE NAME" required> </th>
                                 </tr>
-                               
+
                                  <tr>
-                                     <th><select name="txt3" style="width: 30%;" >
+                                     <th><select name="txt3" style="width: 30%;" required>
+                                       <option value="">-Select semester-</option>
                                              <option value="1"> 1 </option>
                                              <option value="2"> 2 </option>
                                              <option value="3"> 3 </option>
@@ -132,20 +133,20 @@ and open the template in the editor.
                                              <option value="8"> 8 </option>
                                              <option value="9"> 9 </option>
                                              <option value="10"> 10 </option>
-                                         
+
                                          </select></th>
                                 </tr>
                                 <tr>
-                                        <td><center> <input type="submit" value="submit" class="btn_lg"> 
+                                        <td><center> <input type="submit" value="submit" class="btn_lg">
                                 </tr>
             
                         </table>
-                         
+
                 </form>
-           
+
        </div>
          </center>
-       
-       
+
+
     </body>
 </html>

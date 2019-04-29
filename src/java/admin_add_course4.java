@@ -35,7 +35,7 @@ public class admin_add_course4 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet admin_add_course4</title>");            
+            out.println("<title>Servlet admin_add_course4</title>");
             out.println("  <link href=\"login.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"slide.css\" rel=\"stylesheet\">\n" +
 "        <link href=\"https://fonts.googleapis.com/css?family=Montserrat:600\" rel=\"stylesheet\">\n" +
@@ -128,33 +128,33 @@ public class admin_add_course4 extends HttpServlet {
 "                </table>\n" +
 "            </div>\n" +
 "        </div>");
-            
+
             out.println(" <center>\n" +
 "                <div class=\"log_cont\" style=\"float:left; width: 50%;\">\n" +
 "            \n" +
 "                 <form action=\"admin_add_course5\" method=\"post\">\n" +
 "                    \n" +
 "                        <table cellpadding=\"5\" cellspacing=\"10\" >");
-            
-            
+
+
             out.println("        <tr>\n" +
 "                                        <th> <h1> ADD FEE  </h1></th>\n" +
 "                                </tr>\n" +
 "                                <tr>\n" +
-"                                        <th><input type=\"text\" name=\"txt1\" class=\"ip_txt\" placeholder=\"COURSE ID\"> </th>\n" +
+"                                        <th><input type=\"text\" name=\"txt1\" class=\"ip_txt\" placeholder=\"COURSE ID\" required> </th>\n" +
 "                                </tr>\n" +
 "                                 <tr>\n" +
-"                                        <th><input type=\"text\" name=\"txt2\" class=\"ip_txt\" placeholder=\"COURSE NAME\"> </th>\n" +
+"                                        <th><input type=\"text\" name=\"txt2\" class=\"ip_txt\" placeholder=\"COURSE NAME\" required> </th>\n" +
 "                                </tr>\n" +
 "                               \n" +
 
 "                                <tr>\n" +
 "                                        <td><center> <input type=\"submit\" value=\"submit\" class=\"btn_lg\"> \n" +
 "                                </tr>");
-            
-            
+
+
             out.println("</table> </form> </div> </center>");
-            
+
             out.println("</body>");
             out.println("</html>");
         }

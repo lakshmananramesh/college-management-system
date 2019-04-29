@@ -22,26 +22,6 @@ and open the template in the editor.
                     email.setCoustomValidity("");
                 }
             });
-            letter = /^[A-Za-z]+$/;
-            name = document.getElementById("name");
-            name.addEventListener("input",function namval(event){
-               if(letter.match(name)){
-                   return true;
-               } 
-               else{
-                   name.setCoustomValidity("only alphabets allowed");
-               }
-            });
-            function valid()
-            {
-                letter = /^[A-Za-z]+$/;
-                num=/^[0-9]+$/;
-                var n=document.getElementIdBy("name").value;
-                if(!n.match(letter))
-                    document.getElementIdBy("namelab").value="Not valid";
-                
-                
-            }
         </script>
     </head>
     <body class="bg_img">
@@ -50,135 +30,121 @@ and open the template in the editor.
                 <img src="gallery/logo.png" style="width: 60%; height: 35%;">
             </div>
         </div>
-        
+
          <div class="log_cont1" style="width: 100%; float: left;">
             <center>
 <!--             <form action="admission_student" method="post">-->
             <form method="post">
                 <table  cellpadding="6create" style="width:80%;">
-                    
                     <tr>
-                        <td> Name :</td> 
-                        <td> <input type="text" name="txt1" class="input" id="name"><label for="name" id="namelab"></label><h5 style="color:red">*</h5></td>
-                         <td>Admission No :</td> 
-                          <td> <input type="text" name="txt3" class="input"> </td>
-                        
-                        <td>Admission date :</td> 
-                        <td> dd-mm-yy <br> <input type="date"><h5 style="color:red">*</h5></td>
-                        <td>DOB :</td> 
-                        <td> dd-mm-yy <br> <input type="date"><h5 style="color:red">*</h5></td>
-                        <td>Gender :</td> 
-                        <td> <input type="radio" name="txt5" value="male" id='g' >Male <input type="radio" name="txt5" id='g' value="female" >Female<label for="name" id="genlab"></label> <h5 style="color:red">*</h5></td>
-                        
+                        <td> Name :</td>
+                        <td> <input type="text" name="txt1" class="input" id="name" pattern="[A-Za-z]+" required>*</td>
+                         <td>Admission No :</td>
+                          <td> <input type="text" name="txt2" id="addnum" class="input" pattern="[0-9]+" required>*</td>
+                        <td>Admission date :</td>
+                        <td> dd-mm-yy <br> <input type="date" id="txt3" required>*</td>
+                        <td>DOB :</td>
+                        <td> dd-mm-yy <br> <input type="date" id="txt4" required>*</td>
+                        <td>Gender : *</td>
+                        <td> <input type="radio" name="txt5" value="male" id='g' required>Male <input type="radio" name="txt5" id='g' value="female" required>Female1</td>
                     </tr>
                     <tr>
-                        <td>Course :</td> 
-                        <td><select name="course" style="width: 100px;">
-        <option selected="selected" value="bca">bca</option>
-        <option value="ba english">ba english</option>
-        <option value="mca">mca</option>
-          <option value="ma english">ma english</option>
-           <option value="bsc">bsc</option>
-                            </select><h5 style="color:red">*</h5></td>
-                    <td> Father Name :</td> 
-                        <td> <input type="text" name="txt7" class="input" ><h5 style="color:red">*</h5><label for="name" id="fathrlab"></label> </td>
-                         <td>Mother Name :</td> 
-                        <td> <input type="text" name="txt8" class="input" ><h5 style="color:red">*</h5><label for="name" id="mothrlab"></label> </td>
-                        <td>Father job:</td> 
+                        <td>Course :</td>
+                        <td>
+                          <select name="course" style="width: 100px;" required class="btn_lg">
+                            <option value="">-Select-</option>
+                            <option value="bca">bca</option>
+                            <option value="ba english">ba english</option>
+                            <option value="mca">mca</option>
+                            <option value="ma english">ma english</option>
+                            <option value="bsc">bsc</option>
+                          </select>*
+                        </td>
+                    <td> Father Name :</td>
+                        <td> <input type="text" name="txt7" class="input" required pattern="[A-Za-z]+"></td>
+                         <td>Mother Name :</td>
+                        <td> <input type="text" name="txt8" class="input" pattern="[A-Za-z]+" required>*</td>
+                        <td>Father job:</td>
                         <td> <input type="text" name="txt9" class="input"> </td>
-                        <td>Mother job :</td> 
+                        <td>Mother job :</td>
                         <td> <input type="text" name="txt10" class="input"> </td>
-                        
+
                     </tr>
-                    
                     <tr>
-                        <td>Father Number :</td> 
-                        <td> <input type="text" name="txt11" class="input" ><h5 style="color:red">*</h5><label for="name" id="fathrnum"></label> </td>
-                        <td>Mother Number :</td> 
-                        <td> <input type="text" name="txt12" class="input" ><h5 style="color:red">*</h5><label for="name" id="mothrnum"></label> </td>
-                    <td> Email id :</td> 
-                        <td> <input type="text" name="txt13" class="input" > </td>
-                         <td>Religion :</td> 
+                        <td>Father Number :</td>
+                        <td> <input type="text" name="txt11" class="input" pattern="[0-9]+" required>*</td>
+                        <td>Mother Number :</td>
+                        <td> <input type="text" name="txt12" class="input" pattern="[0-9]+" required>*</td>
+                    <td> Email id :</td>
+                        <td> <input type="text" name="txt13" class="input">*</td>
+                         <td>Religion :</td>
                         <td> <input type="text" name="txt14" class="input" > </td>
-                        <td>Address:</td> 
-                        <td> <textarea cols="20" rows="4"></textarea>  </td>
-                       
+                        <td>Address:</td>
+                        <td> <textarea cols="20" rows="4" pattern="[A-Za-z]+" required></textarea>*</td>
                     </tr>
-                    
                      <tr>
-                          <td>District :</td> 
-                        <td> <input type="text" name="txt16" class="input" > </td>
+                          <td>District :</td>
+                        <td> <input type="text" name="txt16" class="input" required></td>
                         <td> State:</td>
-                        <td> <input type="text" name="txt17" class="input" > </td>
-                        <td>Nationality :</td> 
-                        <td> <input type="text" name="txt18" class="input" > </td>
-                    <td> Guradian name :</td> 
-                        <td> <input type="text" name="txt19" class="input" > </td>
-                         <td>Guradian address :</td> 
+                        <td> <input type="text" name="txt17" class="input" required> </td>
+                        <td>Nationality :</td>
+                        <td> <input type="text" name="txt18" class="input" required> </td>
+                    <td> Guradian name :</td>
+                        <td> <input type="text" name="txt19" class="input"> </td>
+                         <td>Guradian address :</td>
                         <td> <input type="text" name="txt20" class="input" > </td>
-                        
-                        
-                        
                     </tr>
                     <tr>
-                        <td>Guradian number:</td> 
+                        <td>Guradian number:</td>
                         <td> <input type="text" name="txt21" class="input"> </td>
-                        <td>Latarl entry :</td> 
+                        <td>Latarl entry :</td>
                         <td> <input type="radio" name="txt22" value="yes" >Yes <input type="radio" name="txt22" value="no" >No </td>
-                        <td>College Bus :</td> 
+                        <td>College Bus :</td>
                         <td> <input type="radio" name="txt23" value="yes" >Yes <input type="radio" name="txt23" value="no" >No </td>
                         </tr>
-                    
-                     
                 </table>
                     <br> <br>
-                     <table class="blueTable">
-<thead>
-<tr>
-<th>Qalification</th>
-<th>Institution Name</th>
-<th>Year passed</th>
-<th>Mark</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>High school<h5 style="color:red">*</h5></td>
-<td><input type="text" name="txt25" class="input1" ></td>
-<td><input type="text" name="txt26" class="input1" ></td>
-<td><input type="text" name="txt27" class="input1" ></td>
-</tr>
-<tr>
-<td>Higher Secondary<h5 style="color:red">*</h5></td>
-<td><input type="text" name="txt28" class="input11" ></td>
-<td><input type="text" name="txt29" class="input1" ></td>
-<td><input type="text" name="txt30" class="input1" ></td>
-</tr>
-<tr>
-<td>Under Graguation</td>
-<td><input type="text" name="txt31" class="input1" ></td>
-<td><input type="text" name="txt32" class="input1" ></td>
-<td><input type="text" name="txt34" class="input1" ></td>
-</tr>
-<tr>
-<td>Post Graguation</td>
-<td><input type="text" name="txt35" class="input1" ></td>
-<td><input type="text" name="txt36" class="input1" ></td>
-<td><input type="text" name="txt37" class="input1" ></td>
-</tr>
-</tbody>
-</table>
-                
+               <table class="blueTable">
+                 <thead>
+                   <tr>
+                     <th>Qalification</th>
+                     <th>Institution Name</th>
+                     <th>Year passed</th>
+                     <th>Mark</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td>High school*</td>
+                     <td><input type="text" name="txt25" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><input type="text" name="txt26" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><input type="text" name="txt27" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><span id="hs_mark"></span></td>
+                   </tr>
+                   <tr>
+                     <td>Higher Secondary*</td>
+                     <td><input type="text" name="txt28" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><input type="text" name="txt29" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><input type="text" name="txt30" class="input1" pattern="[A-Za-z]+" required></td>
+                     <td><span id="hss_mark"></span></td>
+                   </tr>
+                   <tr>
+                     <td>Under Graguation</td>
+                     <td><input type="text" name="txt31" class="input1" ></td>
+                     <td><input type="text" name="txt32" class="input1" ></td>
+                     <td><input type="text" name="txt34" class="input1" ></td>
+                   </tr>
+                   <tr>
+                     <td>Post Graguation</td>
+                     <td><input type="text" name="txt35" class="input1" ></td>
+                     <td><input type="text" name="txt36" class="input1" ></td>
+                     <td><input type="text" name="txt37" class="input1"></td>
+                   </tr>
+                 </tbody>
+               </table>
                 <br> <br>
                 <input type="submit" value="Submit" class="btn_lg">
               <br><br>
-                      
-                
-    
-    
-    
-   
             </form>
                 <a href="admission_home.html"> <input type="submit" value="Cancel" class="btn_lg" > </a>
               </center>
